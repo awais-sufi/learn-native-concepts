@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { View, Text, Image } from 'react-native';
 import { Images } from '../../../assets/images';
-import { AppButton } from '../../../components/atoms/AppButton';
-import { useAuth } from '../../../providers/AuthProvider';
 import { styles } from './HomeScreen.styles';
 import { getAuthToken } from '../../../services/auth/secureStorage.service';
 
 export default function HomeScreen() {
-  const { logout } = useAuth();
   const [token, setToken] = useState<string | null>(null);
 
   useEffect(() => {
@@ -46,11 +43,6 @@ export default function HomeScreen() {
             </Text>
           )}
         </View>
-      </View>
-
-      {/* Footer Action */}
-      <View style={styles.footer}>
-        <AppButton title="Logout" onPress={logout} />
       </View>
     </View>
   );

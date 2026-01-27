@@ -1,5 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
-import auth from '@react-native-firebase/auth';
+import auth, { FirebaseAuthTypes } from '@react-native-firebase/auth';
 import {
   signUpWithEmail,
   loginWithEmail,
@@ -21,6 +21,7 @@ type AuthContextType = {
   register: (email: string, password: string) => Promise<void>;
   logout: () => Promise<void>;
   loading: boolean;
+  user: FirebaseAuthTypes.User | null;
 };
 
 const AuthContext = createContext<AuthContextType>({} as AuthContextType);
@@ -28,6 +29,7 @@ const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
+  const [user, setUser] = useState<FirebaseAuthTypes.User | null>(null);
 
   useEffect(() => {
     const bootstrap = async () => {
@@ -57,13 +59,15 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
   }, []);
 
   useEffect(() => {
-    const unsubscribe = auth().onAuthStateChanged(async user => {
-      if (user) {
-        const token = await user.getIdToken(true); // force refresh
+    const unsubscribe = auth().onAuthStateChanged(async currentUser => {
+      if (currentUser) {
+        const token = await currentUser.getIdToken(true); // force refresh
         await setAuthToken(token);
+        setUser(currentUser);
         setIsAuthenticated(true);
       } else {
         await clearAuthToken();
+        setUser(null);
         setIsAuthenticated(false);
       }
       setLoading(false);
@@ -92,7 +96,14 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
 
   return (
     <AuthContext.Provider
-      value={{ isAuthenticated, login, register, logout: signOut, loading }}
+      value={{
+        isAuthenticated,
+        user,
+        login,
+        register,
+        logout: signOut,
+        loading,
+      }}
     >
       {children}
     </AuthContext.Provider>

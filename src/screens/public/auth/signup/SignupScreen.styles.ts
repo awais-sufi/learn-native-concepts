@@ -33,4 +33,9 @@ export const styles = StyleSheet.create({
   footerButton: {
     marginTop: 16,
   },
+  errorText: {
+    color: '#E53935',
+    fontSize: 12,
+    marginTop: 4,
+  },
 });

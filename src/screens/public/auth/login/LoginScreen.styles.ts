@@ -33,4 +33,10 @@ export const styles = StyleSheet.create({
   footerButton: {
     marginTop: 16,
   },
+  authError: {
+    color: '#D32F2F', // material red (clean & accessible)
+    fontSize: 12,
+    marginTop: 4,
+    marginLeft: 4,
+  },
 });
