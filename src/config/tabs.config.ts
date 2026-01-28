@@ -1,8 +1,8 @@
 import HomeScreen from '../screens/private/home/HomeScreen';
 import FavoritesScreen from '../screens/private/favorites/FavoritesScreen';
 import NotificationScreen from '../screens/private/notification/NotificationScreen';
-import ProfileScreen from '../screens/private/profile/ProfileScreen';
 import { createTabIcon } from '../navigation/BottomTabs/createTabIcon';
+import ProfileStack from '../screens/private/profile/ProfileStack/ProfileStack';
 
 export const TABS = [
   {
@@ -30,7 +30,7 @@ export const TABS = [
   },
   {
     name: 'Profile',
-    component: ProfileScreen,
+    component: ProfileStack,
     icon: require('../assets/icons/bag_icon.png'),
     tabBarIcon: createTabIcon(require('../assets/icons/bag_icon.png')),
     badge: true,

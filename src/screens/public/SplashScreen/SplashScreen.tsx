@@ -1,4 +1,5 @@
 import { View, Text, ActivityIndicator, StyleSheet } from 'react-native';
+import { COLORS } from '../../../theme/colors/colors';
 
 export default function SplashScreen() {
   return (
@@ -14,7 +15,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background,
   },
   logo: {
     fontSize: 28,

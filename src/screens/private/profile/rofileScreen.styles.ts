@@ -79,4 +79,15 @@ export const styles = StyleSheet.create({
   footer: {
     paddingBottom: 32,
   },
+  linkRow: {
+    marginTop: 16,
+    paddingVertical: 14,
+    paddingHorizontal: 16,
+  },
+
+  linkText: {
+    fontSize: 16,
+    color: '#007AFF', // iOS blue
+    fontWeight: '500',
+  },
 });

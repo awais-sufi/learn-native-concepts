@@ -6,6 +6,7 @@ import PrivateStack from './PrivateStack/PrivateStack';
 import AuthStack from './AuthStack/AuthStack';
 import SplashScreen from '../screens/public/SplashScreen/SplashScreen';
 import RNBootSplash from 'react-native-bootsplash';
+import { FavoritesProvider } from '../store/context/FavoritesContext';
 
 export default function AppNavigator() {
   const { isAuthenticated, loading } = useAuth();
@@ -19,8 +20,10 @@ export default function AppNavigator() {
   if (loading) return <SplashScreen />;
 
   return (
-    <NavigationContainer>
-      {isAuthenticated ? <PrivateStack /> : <AuthStack />}
-    </NavigationContainer>
+    <FavoritesProvider>
+      <NavigationContainer>
+        {isAuthenticated ? <PrivateStack /> : <AuthStack />}
+      </NavigationContainer>
+    </FavoritesProvider>
   );
 }

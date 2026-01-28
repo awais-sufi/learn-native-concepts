@@ -1,5 +1,6 @@
 import React from 'react';
 import { TextInput, StyleSheet } from 'react-native';
+import { COLORS } from '../../theme/colors/colors';
 
 export function AppInput(props: any) {
   return (
@@ -16,10 +17,10 @@ const styles = StyleSheet.create({
   input: {
     height: 48,
     borderWidth: 1,
-    borderColor: '#ddd',
+    borderColor: COLORS.border, // was '#ddd'
     borderRadius: 8,
     paddingHorizontal: 12,
     marginBottom: 12,
-    color: '#000', // 👈 IMPORTANT (Android)
+    color: COLORS.textPrimary, // was '#000' (Android safe)
   },
 });

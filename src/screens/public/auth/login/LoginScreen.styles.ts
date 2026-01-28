@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { COLORS } from '../../../../theme/colors/colors';
 
 export const styles = StyleSheet.create({
   container: {
@@ -6,19 +7,19 @@ export const styles = StyleSheet.create({
     paddingHorizontal: 24,
     justifyContent: 'center',
     paddingBottom: 80,
-    backgroundColor: '#fff',
+    backgroundColor: COLORS.background, // was '#fff'
   },
 
   title: {
     fontSize: 24,
     fontWeight: '600',
     marginBottom: 8,
-    color: '#111',
+    color: COLORS.textPrimary, // was '#111'
   },
 
   subtitle: {
     fontSize: 14,
-    color: '#666',
+    color: COLORS.textSecondary, // was '#666'
     marginBottom: 24,
   },
 
@@ -33,8 +34,9 @@ export const styles = StyleSheet.create({
   footerButton: {
     marginTop: 16,
   },
+
   authError: {
-    color: '#D32F2F', // material red (clean & accessible)
+    color: COLORS.error, // was '#D32F2F'
     fontSize: 12,
     marginTop: 4,
     marginLeft: 4,
