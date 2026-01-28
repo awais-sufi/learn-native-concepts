@@ -1,9 +1,6 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import HomeScreen from '../../screens/private/home/HomeScreen';
-import ProfileScreen from '../../screens/private/profile/ProfileScreen';
-import FavoritesScreen from '../../screens/private/favorites/FavoritesScreen';
-import NotificationScreen from '../../screens/private/notification/NotificationScreen';
+import { TABS } from '../../config/tabs.config';
 
 const Tab = createBottomTabNavigator();
 
@@ -20,10 +17,16 @@ export default function BottomTabs() {
         },
       }}
     >
-      <Tab.Screen name="Home" component={HomeScreen} />
-      <Tab.Screen name="Favorites" component={FavoritesScreen} />
-      <Tab.Screen name="Notification" component={NotificationScreen} />
-      <Tab.Screen name="Profile" component={ProfileScreen} />
+      {TABS.map(tab => (
+        <Tab.Screen
+          key={tab.name}
+          name={tab.name}
+          component={tab.component}
+          options={{
+            tabBarIcon: tab.tabBarIcon,
+          }}
+        />
+      ))}
     </Tab.Navigator>
   );
 }
