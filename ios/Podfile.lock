@@ -1940,6 +1940,8 @@ PODS:
     - SocketRocket
   - react-native-biometrics (3.0.1):
     - React-Core
+  - react-native-restart (0.0.27):
+    - React-Core
   - react-native-safe-area-context (5.6.2):
     - boost
     - DoubleConversion
@@ -2613,6 +2615,34 @@ PODS:
     - ReactCommon/turbomodule/core
     - SocketRocket
     - Yoga
+  - RNCAsyncStorage (2.2.0):
+    - boost
+    - DoubleConversion
+    - fast_float
+    - fmt
+    - glog
+    - hermes-engine
+    - RCT-Folly
+    - RCT-Folly/Fabric
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-jsi
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-renderercss
+    - React-rendererdebug
+    - React-utils
+    - ReactCodegen
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - SocketRocket
+    - Yoga
   - RNFBApp (23.8.4):
     - boost
     - DoubleConversion
@@ -2808,6 +2838,7 @@ DEPENDENCIES:
   - React-Mapbuffer (from `../node_modules/react-native/ReactCommon`)
   - React-microtasksnativemodule (from `../node_modules/react-native/ReactCommon/react/nativemodule/microtasks`)
   - react-native-biometrics (from `../node_modules/react-native-biometrics`)
+  - react-native-restart (from `../node_modules/react-native-restart`)
   - react-native-safe-area-context (from `../node_modules/react-native-safe-area-context`)
   - React-NativeModulesApple (from `../node_modules/react-native/ReactCommon/react/nativemodule/core/platform/ios`)
   - React-networking (from `../node_modules/react-native/ReactCommon/react/networking`)
@@ -2843,6 +2874,7 @@ DEPENDENCIES:
   - ReactCodegen (from `build/generated/ios/ReactCodegen`)
   - ReactCommon/turbomodule/core (from `../node_modules/react-native/ReactCommon`)
   - RNBootSplash (from `../node_modules/react-native-bootsplash`)
+  - "RNCAsyncStorage (from `../node_modules/@react-native-async-storage/async-storage`)"
   - "RNFBApp (from `../node_modules/@react-native-firebase/app`)"
   - "RNFBAuth (from `../node_modules/@react-native-firebase/auth`)"
   - RNKeychain (from `../node_modules/react-native-keychain`)
@@ -2954,6 +2986,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon/react/nativemodule/microtasks"
   react-native-biometrics:
     :path: "../node_modules/react-native-biometrics"
+  react-native-restart:
+    :path: "../node_modules/react-native-restart"
   react-native-safe-area-context:
     :path: "../node_modules/react-native-safe-area-context"
   React-NativeModulesApple:
@@ -3024,6 +3058,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native/ReactCommon"
   RNBootSplash:
     :path: "../node_modules/react-native-bootsplash"
+  RNCAsyncStorage:
+    :path: "../node_modules/@react-native-async-storage/async-storage"
   RNFBApp:
     :path: "../node_modules/@react-native-firebase/app"
   RNFBAuth:
@@ -3089,6 +3125,7 @@ SPEC CHECKSUMS:
   React-Mapbuffer: d0c5f3793332ebec11bfbbbd962ea526ee85efff
   React-microtasksnativemodule: 1a7d806e2ec20df1c6d88b29e72787fb48aeab70
   react-native-biometrics: 43ed5b828646a7862dbc7945556446be00798e7d
+  react-native-restart: 0bc732f4461709022a742bb29bcccf6bbc5b4863
   react-native-safe-area-context: 0a3b034bb63a5b684dd2f5fffd3c90ef6ed41ee8
   React-NativeModulesApple: e554252d69442010807867cc7d70c0008048ad20
   React-networking: 669cb54cc7e5b65d7dafeeb36970a1421adc8bb3
@@ -3125,6 +3162,7 @@ SPEC CHECKSUMS:
   ReactCommon: 15e1e727fa34f760beb7dd52928687fda8edf8dc
   RecaptchaInterop: 11e0b637842dfb48308d242afc3f448062325aba
   RNBootSplash: 3747875b6d34bc7f56b5f95fb8f4ea7fb68de0a1
+  RNCAsyncStorage: fd44f4b03e007e642e98df6726737bc66e9ba609
   RNFBApp: eec5655ba2bc50639dacfd01a2e9ef197165eb92
   RNFBAuth: 501711def5c5513f1117efb2972925ae753a06eb
   RNKeychain: 76d042fc1dfba47f3945920bc82e0bce9ad1ff55

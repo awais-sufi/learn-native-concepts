@@ -1,4 +1,5 @@
 import { StyleSheet } from 'react-native';
+import { I18nManager } from 'react-native';
 
 export const styles = StyleSheet.create({
   safe: {
@@ -48,18 +49,20 @@ export const styles = StyleSheet.create({
     fontSize: 16,
     fontWeight: '600',
     color: '#3E2723',
+    textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
 
   cardSubtitle: {
     fontSize: 13,
     color: '#6D4C41',
     marginTop: 2,
+    textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
 
   time: {
     fontSize: 11,
     color: '#9E9E9E',
-    alignSelf: 'flex-end',
+    alignSelf: I18nManager.isRTL ? 'flex-start' : 'flex-end',
   },
 
   emptyState: {

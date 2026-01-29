@@ -1,22 +1,41 @@
 import React from 'react';
-import { View, Text, Image, Pressable } from 'react-native';
+import { View, Text, Image, Pressable, Alert } from 'react-native';
 import { useNavigation } from '@react-navigation/native';
 import { useAuth } from '../../../providers/AuthProvider';
 import { AppButton } from '../../../components/atoms/AppButton';
 import { styles } from './rofileScreen.styles';
 import { Images } from '../../../assets/images';
+import i18n, { applyLanguage } from '../../../utils/i18n';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import RNRestart from 'react-native-restart';
 
 export default function ProfileScreen() {
   const { logout, user } = useAuth();
   const navigation = useNavigation<any>();
+
+  const changeLanguage = async (lang: 'en' | 'ur') => {
+    await AsyncStorage.setItem('APP_LANGUAGE', lang);
+    applyLanguage(lang);
+
+    Alert.alert(
+      'Restart Required',
+      'App will restart to apply language changes.',
+      [
+        {
+          text: 'OK',
+          onPress: () => RNRestart.restart(),
+        },
+      ],
+    );
+  };
 
   return (
     <View style={styles.container}>
       <View style={styles.content}>
         {/* Header */}
         <View style={styles.header}>
-          <Text style={styles.title}>Your Profile</Text>
-          <Text style={styles.subtitle}>Manage your account and session</Text>
+          <Text style={styles.title}>{i18n.t('profileTitle')}</Text>
+          <Text style={styles.subtitle}>{i18n.t('profileSubtitle')}</Text>
         </View>
 
         {/* Profile Card */}
@@ -26,32 +45,44 @@ export default function ProfileScreen() {
           <Text style={styles.email}>Securely authenticated with Firebase</Text>
         </View>
 
-        {/* Security Info */}
+        {/* Language Section */}
         <View style={styles.card}>
-          <Text style={styles.sectionTitle}>Security</Text>
-          <Text style={styles.infoText}>
-            Your session is protected using device Keychain / Keystore.
-          </Text>
+          <Text style={styles.sectionTitle}>{i18n.t('language')}</Text>
+
+          <Pressable onPress={() => changeLanguage('en')}>
+            <Text style={styles.linkText}>{i18n.t('english')}</Text>
+          </Pressable>
+
+          <Pressable onPress={() => changeLanguage('ur')}>
+            <Text style={styles.linkText}>{i18n.t('urdu')}</Text>
+          </Pressable>
         </View>
 
-        {/* Feedback Link */}
+        {/* Security Info */}
+        <View style={styles.card}>
+          <Text style={styles.sectionTitle}>{i18n.t('security')}</Text>
+          <Text style={styles.infoText}>{i18n.t('securityInfo')}</Text>
+        </View>
+
+        {/* Links */}
         <Pressable
           style={styles.linkRow}
           onPress={() => navigation.navigate('Feedback')}
         >
-          <Text style={styles.linkText}>💬 Send Feedback</Text>
+          <Text style={styles.linkText}>💬 {i18n.t('sendFeedback')}</Text>
         </Pressable>
+
         <Pressable
           style={styles.linkRow}
           onPress={() => navigation.navigate('Contact')}
         >
-          <Text style={styles.linkText}>📞 Contact Us</Text>
+          <Text style={styles.linkText}>📞 {i18n.t('contactUs')}</Text>
         </Pressable>
       </View>
 
       {/* Logout */}
       <View style={styles.footer}>
-        <AppButton title="Logout" onPress={logout} />
+        <AppButton title={i18n.t('logout')} onPress={logout} />
       </View>
     </View>
   );

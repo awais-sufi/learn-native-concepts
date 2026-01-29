@@ -39,6 +39,6 @@ export const styles = StyleSheet.create({
     color: COLORS.error, // was '#D32F2F'
     fontSize: 12,
     marginTop: 4,
-    marginLeft: 4,
+    marginStart: 4,
   },
 });

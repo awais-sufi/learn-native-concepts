@@ -1,0 +1,60 @@
+{
+
+  "welcomeBack": "Welcome back",
+  "loginSubtitle": "Login with your email to continue",
+  "email": "Email",
+  "password": "Password",
+  "login": "Login",
+  "loggingIn": "Logging in...",
+  "createAccount": "Create new account",
+
+  "errorInvalidCredential": "Incorrect email or password",
+  "errorUserNotFound": "No account found with this email",
+  "errorInvalidEmail": "Invalid email address",
+  "errorTooManyRequests": "Too many attempts. Try again later.",
+  "errorGeneric": "Unable to log in. Please try again.",
+  "profileTitle": "Your Profile",
+  "profileSubtitle": "Manage your account and session",
+  "security": "Security",
+  "securityInfo": "Your session is protected using device Keychain / Keystore.",
+  "sendFeedback": "Send Feedback",
+  "contactUs": "Contact Us",
+  "logout": "Logout",
+  "language": "Language",
+  "english": "English",
+  "urdu": "Urdu",
+  
+  "notifications": "Notifications",
+  "notificationsSubtitle": "Security & activity updates",
+  "noNotifications": "No notifications yet. You’re all caught up ☕️",
+
+  "notif_login_alert": "Login Alert",
+  "notif_login_alert_desc": "New login detected on your device",
+
+  "notif_security_update": "Security Update",
+  "notif_security_update_desc": "Biometric protection enabled successfully",
+
+  "notif_password_changed": "Password Changed",
+  "notif_password_changed_desc": "Your password was updated successfully",
+
+  "notif_new_device": "New Device Detected",
+  "notif_new_device_desc": "A new device signed into your account",
+
+  "notif_session_expired": "Session Expired",
+  "notif_session_expired_desc": "You were logged out for security reasons",
+
+  "notif_profile_updated": "Profile Updated",
+  "notif_profile_updated_desc": "Your profile information was updated",
+
+  "notif_email_verified": "Email Verified",
+  "notif_email_verified_desc": "Your email address has been verified",
+
+  "notif_login_location_desc": "Login from a new location detected",
+
+  "notif_security_tip": "Security Tip",
+  "notif_security_tip_desc": "Enable 2-step verification for extra safety",
+
+  "notif_biometric_disabled": "Biometric Disabled",
+  "notif_biometric_disabled_desc": "Biometric authentication was turned off"
+
+}

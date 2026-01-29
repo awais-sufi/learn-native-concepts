@@ -1,12 +1,14 @@
 import React from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, I18nManager } from 'react-native';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 import { AppButton } from '../../../../components/atoms/AppButton';
 import { AppInput } from '../../../../components/atoms/AppInput';
 import { useAuth } from '../../../../providers/AuthProvider';
 import { styles } from './LoginScreen.styles';
 import { loginSchema } from './login.schema';
+import i18n from '../../../../utils/i18n';
 
 export default function LoginScreen({ navigation }: any) {
   const { login } = useAuth();
@@ -29,38 +31,39 @@ export default function LoginScreen({ navigation }: any) {
     },
   });
 
-  const onLogin = async (data: { email: string; password: string }) => {
+  const onLogin = async (data: LoginFormValues) => {
     try {
       setAuthError(null);
       await login(data.email.trim(), data.password);
     } catch (e: any) {
       switch (e.code) {
         case 'auth/invalid-credential':
-          setAuthError('Incorrect email or password');
+          setAuthError(i18n.t('errorInvalidCredential'));
           break;
 
         case 'auth/user-not-found':
-          setAuthError('No account found with this email');
+          setAuthError(i18n.t('errorUserNotFound'));
           break;
 
         case 'auth/invalid-email':
-          setAuthError('Invalid email address');
+          setAuthError(i18n.t('errorInvalidEmail'));
           break;
 
         case 'auth/too-many-requests':
-          setAuthError('Too many attempts. Try again later.');
+          setAuthError(i18n.t('errorTooManyRequests'));
           break;
 
         default:
-          setAuthError('Unable to log in. Please try again.');
+          setAuthError(i18n.t('errorGeneric'));
       }
     }
   };
 
   return (
     <View style={styles.container}>
-      <Text style={styles.title}>Welcome back</Text>
-      <Text style={styles.subtitle}>Login with your email to continue</Text>
+      <Text style={styles.title}>{i18n.t('welcomeBack')}</Text>
+
+      <Text style={styles.subtitle}>{i18n.t('loginSubtitle')}</Text>
 
       <View style={styles.form}>
         <Controller
@@ -68,10 +71,11 @@ export default function LoginScreen({ navigation }: any) {
           name="email"
           render={({ field: { onChange, value } }) => (
             <AppInput
-              placeholder="Email"
+              placeholder={i18n.t('email')}
               value={value}
               autoCapitalize="none"
               keyboardType="email-address"
+              textAlign={I18nManager.isRTL ? 'right' : 'left'}
               onChangeText={(text: string) => {
                 setAuthError(null);
                 onChange(text);
@@ -87,9 +91,10 @@ export default function LoginScreen({ navigation }: any) {
           name="password"
           render={({ field: { onChange, value } }) => (
             <AppInput
-              placeholder="Password"
+              placeholder={i18n.t('password')}
               value={value}
               secureTextEntry
+              textAlign={I18nManager.isRTL ? 'right' : 'left'}
               onChangeText={(text: string) => {
                 setAuthError(null);
                 onChange(text);
@@ -103,7 +108,7 @@ export default function LoginScreen({ navigation }: any) {
         <View style={styles.spacer} />
 
         <AppButton
-          title={isSubmitting ? 'Logging in...' : 'Login'}
+          title={isSubmitting ? i18n.t('loggingIn') : i18n.t('login')}
           onPress={handleSubmit(onLogin)}
           disabled={isSubmitting}
         />
@@ -111,7 +116,7 @@ export default function LoginScreen({ navigation }: any) {
         <View style={styles.footerButton} />
 
         <AppButton
-          title="Create new account"
+          title={i18n.t('createAccount')}
           onPress={() => navigation.navigate('Signup')}
           variant="text"
         />

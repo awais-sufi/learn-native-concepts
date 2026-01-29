@@ -1,0 +1,62 @@
+{
+  "welcomeBack": "خوش آمدید",
+  "loginSubtitle": "جاری رکھنے کے لیے اپنے ای میل سے لاگ ان کریں",
+
+  "login": "لاگ ان",
+  "loggingIn": "لاگ ان ہو رہا ہے...",
+
+  "email": "ای میل",
+  "password": "پاس ورڈ",
+
+  "createAccount": "نیا اکاؤنٹ بنائیں",
+
+  "errorInvalidCredential": "ای میل یا پاس ورڈ غلط ہے",
+  "errorUserNotFound": "اس ای میل کے ساتھ کوئی اکاؤنٹ موجود نہیں",
+  "errorInvalidEmail": "غلط ای میل ایڈریس",
+  "errorTooManyRequests": "بہت زیادہ کوششیں ہو گئیں، بعد میں دوبارہ کوشش کریں",
+  "errorGeneric": "لاگ ان نہیں ہو سکا، دوبارہ کوشش کریں",
+    "profileTitle": "آپ کا پروفائل",
+  "profileSubtitle": "اپنا اکاؤنٹ اور سیشن منظم کریں",
+  "security": "سیکیورٹی",
+  "securityInfo": "آپ کا سیشن ڈیوائس کی چین / کی اسٹور کے ذریعے محفوظ ہے۔",
+  "sendFeedback": "رائے دیں",
+  "contactUs": "ہم سے رابطہ کریں",
+  "logout": "لاگ آؤٹ",
+  "language": "زبان",
+  "english": "انگریزی",
+  "urdu": "اردو",
+  
+  "notifications": "اطلاعات",
+  "notificationsSubtitle": "سیکیورٹی اور سرگرمی کی تازہ ترین معلومات",
+  "noNotifications": "ابھی کوئی اطلاع نہیں۔ سب کچھ اپ ٹو ڈیٹ ہے ☕️",
+
+  "notif_login_alert": "لاگ ان الرٹ",
+  "notif_login_alert_desc": "آپ کے ڈیوائس پر نیا لاگ ان پایا گیا",
+
+  "notif_security_update": "سیکیورٹی اپڈیٹ",
+  "notif_security_update_desc": "بایومیٹرک تحفظ کامیابی سے فعال ہو گیا",
+
+  "notif_password_changed": "پاس ورڈ تبدیل ہو گیا",
+  "notif_password_changed_desc": "آپ کا پاس ورڈ کامیابی سے اپڈیٹ ہو گیا",
+
+  "notif_new_device": "نیا ڈیوائس پایا گیا",
+  "notif_new_device_desc": "آپ کے اکاؤنٹ میں ایک نیا ڈیوائس لاگ ان ہوا",
+
+  "notif_session_expired": "سیشن ختم ہو گیا",
+  "notif_session_expired_desc": "سیکیورٹی وجوہات کی بنا پر آپ کو لاگ آؤٹ کر دیا گیا",
+
+  "notif_profile_updated": "پروفائل اپڈیٹ ہو گیا",
+  "notif_profile_updated_desc": "آپ کی پروفائل معلومات کامیابی سے اپڈیٹ ہو گئیں",
+
+  "notif_email_verified": "ای میل کی تصدیق ہو گئی",
+  "notif_email_verified_desc": "آپ کے ای میل ایڈریس کی تصدیق ہو گئی ہے",
+
+  "notif_login_location_desc": "نئی جگہ سے لاگ ان کا پتہ چلا",
+
+  "notif_security_tip": "سیکیورٹی مشورہ",
+  "notif_security_tip_desc": "اضافی تحفظ کے لیے دو مرحلہ تصدیق فعال کریں",
+
+  "notif_biometric_disabled": "بایومیٹرک غیر فعال",
+  "notif_biometric_disabled_desc": "بایومیٹرک تصدیق بند کر دی گئی ہے"
+}
+
