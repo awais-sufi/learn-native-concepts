@@ -12,7 +12,7 @@ export const COLORS = {
 
   // 🤍 Surfaces
   background: '#FFFFFF',
-  surface: '#F9FAFB',
+  surface: '#FAF7F2',
   border: '#E5E7EB',
 
   // 🚦 States

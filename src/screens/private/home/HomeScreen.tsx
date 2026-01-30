@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import {
   View,
   Text,
@@ -8,7 +8,7 @@ import {
   ScrollView,
 } from 'react-native';
 import { styles } from './HomeScreen.styles';
-import { getAuthToken } from '../../../services/auth/secureStorage.service';
+// import { getAuthToken } from '../../../services/auth/secureStorage.service';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import { useNavigation } from '@react-navigation/native';
 import { useFavorites } from '../../../store/context/FavoritesContext';
@@ -119,21 +119,21 @@ type CartItem = { coffee: CoffeeItem; quantity: number };
 export default function HomeScreen() {
   const { favorites, toggleFavorite, isFavorite } = useFavorites();
   const navigation = useNavigation<any>();
-  const [token, setToken] = useState<string | null>(null);
+  // const [token, setToken] = useState<string | null>(null);
   const [cart, setCart] = useState<CartItem[]>([]);
   const [selectedCoffee, setSelectedCoffee] = useState<CoffeeItem>(
     COFFEE_MENU[0],
   );
 
-  useEffect(() => {
-    const loadToken = async () => {
-      const storedToken = await getAuthToken();
-      console.log('🔐 TOKEN FROM KEYCHAIN:', storedToken);
-      setToken(storedToken);
-    };
+  // useEffect(() => {
+  //   const loadToken = async () => {
+  //     const storedToken = await getAuthToken();
+  //     console.log('🔐 TOKEN FROM KEYCHAIN:', storedToken);
+  //     setToken(storedToken);
+  //   };
 
-    loadToken();
-  }, []);
+  //   loadToken();
+  // }, []);
 
   const addToCart = (coffee: CoffeeItem) => {
     setCart(prev => {
@@ -393,13 +393,13 @@ export default function HomeScreen() {
         )}
 
         {/* Secure Session Info */}
-        {token && (
+        {/* token && (
           <View style={styles.securityCard}>
             <Text style={styles.securityText}>
               🔒 Your session is protected with industry-grade encryption
             </Text>
           </View>
-        )}
+        )*/}
       </ScrollView>
     </SafeAreaView>
   );

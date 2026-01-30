@@ -1,14 +1,15 @@
 import { StyleSheet } from 'react-native';
 import { I18nManager } from 'react-native';
+import { COLORS } from '../../../theme/colors/colors';
 
 export const styles = StyleSheet.create({
   safe: {
     flex: 1,
-    backgroundColor: '#FAF7F2',
+    backgroundColor: COLORS.surface,
   },
   container: {
     flex: 1,
-    backgroundColor: '#FAF7F2',
+    backgroundColor: COLORS.surface,
     paddingHorizontal: 20,
   },
 
@@ -20,17 +21,17 @@ export const styles = StyleSheet.create({
   title: {
     fontSize: 26,
     fontWeight: '700',
-    color: '#3E2723',
+    color: COLORS.textPrimary,
   },
 
   subtitle: {
     fontSize: 14,
-    color: '#6D4C41',
+    color: COLORS.textSecondary,
     marginTop: 4,
   },
 
   card: {
-    backgroundColor: '#FFFFFF',
+    backgroundColor: COLORS.background,
     borderRadius: 16,
     padding: 16,
     marginBottom: 12,
@@ -48,20 +49,20 @@ export const styles = StyleSheet.create({
   cardTitle: {
     fontSize: 16,
     fontWeight: '600',
-    color: '#3E2723',
+    color: COLORS.textPrimary,
     textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
 
   cardSubtitle: {
     fontSize: 13,
-    color: '#6D4C41',
+    color: COLORS.textSecondary,
     marginTop: 2,
     textAlign: I18nManager.isRTL ? 'right' : 'left',
   },
 
   time: {
     fontSize: 11,
-    color: '#9E9E9E',
+    color: COLORS.tabInactive,
     alignSelf: I18nManager.isRTL ? 'flex-start' : 'flex-end',
   },
 
@@ -79,7 +80,7 @@ export const styles = StyleSheet.create({
 
   emptyText: {
     fontSize: 14,
-    color: '#6D4C41',
+    color: COLORS.textSecondary,
     textAlign: 'center',
     paddingHorizontal: 24,
   },

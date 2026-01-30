@@ -1,5 +1,6 @@
 import { StyleSheet } from 'react-native';
 import { COLORS } from '../../../theme/colors/colors';
+import { Platform } from 'react-native';
 
 export const styles = StyleSheet.create({
   container: {
@@ -21,14 +22,14 @@ export const styles = StyleSheet.create({
   },
 
   greeting: {
-    fontSize: 14,
+    fontSize: Platform.OS === 'ios' ? 13 : 14,
     color: COLORS.textSecondary,
     marginBottom: 4,
   },
 
   title: {
-    fontSize: 28,
-    fontWeight: '700',
+    fontSize: Platform.OS === 'ios' ? 26 : 28,
+    fontWeight: Platform.OS === 'ios' ? '600' : '700',
     color: COLORS.textPrimary,
   },
 
@@ -45,6 +46,9 @@ export const styles = StyleSheet.create({
     color: 'white',
     fontSize: 12,
     fontWeight: '600',
+  },
+  safe: {
+    backgroundColor: '#fff',
   },
 
   // Featured Coffee Styles
