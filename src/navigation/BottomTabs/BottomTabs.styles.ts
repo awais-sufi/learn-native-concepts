@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
 
     backgroundColor: COLORS.background, // was '#FFFFFF'
 
-    borderTopLeftRadius: 28,
-    borderTopRightRadius: 28,
+    // borderTopLeftRadius: 28,
+    // borderTopRightRadius: 28,
 
     // iOS shadow
     shadowColor: COLORS.black, // was '#000'
